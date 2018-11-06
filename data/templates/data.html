@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Weather Balloon Data</title>
+
+<!-- If you are using downloaded FusionCharts libraries, uncomment the below code   -->
+<!--
+
+	{% load static %} 
+	<script type="text/javascript" src="{% static "fusioncharts/fusioncharts.js" %}"></script>
+	<script type="text/javascript" src="{% static "fusioncharts/fusioncharts.zoomscatter.js" %}"></script>
+	<script type="text/javascript" src="{% static "fusioncharts/themes/fusioncharts.theme.fint.js" %}"></script>
+-->   
+	<script type="text/javascript" src="//cdn.fusioncharts.com/fusioncharts/latest/fusioncharts.js"></script>
+	<script type="text/javascript" src="//cdn.fusioncharts.com/fusioncharts/latest/themes/fusioncharts.theme.ocean.js"></script>
+</head>
+<body style="font-family:'Helvetica Neue', Arial; font-size: 16px;">
+	<table>
+		<tr>
+			<th>Temperature Sensor Data</th>
+			<th>Humidity Sensor Data</th>
+		</tr>
+		<tr>
+			<td><div id="chart-1">{{ output|safe }}</div></td>
+			<td><div id="chart-2">{{ output2|safe }}</div></td>
+		</tr>
+	</table>
+	</br>
+	<table>
+		<tr>
+			<th>GPS Sensor Data</th>
+			<th>Accelerometer Sensor Data</th>
+		</tr>
+		<tr>
+			<td><div id="chart-3">{{ output3|safe }}</div></td>
+			<td><div id="chart-4">{{ output4|safe }}</div></td>
+		</tr>
+	</table>
+	</br>
+	<a href="/">Back</a>
+</body>
+</html>

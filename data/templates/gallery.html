@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Weather Balloon Data</title>
+
+<!-- If you are using downloaded FusionCharts libraries, uncomment the below code   -->
+<!--
+
+	{% load static %} 
+	<script type="text/javascript" src="{% static "fusioncharts/fusioncharts.js" %}"></script>
+	<script type="text/javascript" src="{% static "fusioncharts/fusioncharts.zoomscatter.js" %}"></script>
+	<script type="text/javascript" src="{% static "fusioncharts/themes/fusioncharts.theme.fint.js" %}"></script>
+-->   
+	<script type="text/javascript" src="//cdn.fusioncharts.com/fusioncharts/latest/fusioncharts.js"></script>
+	<script type="text/javascript" src="//cdn.fusioncharts.com/fusioncharts/latest/themes/fusioncharts.theme.ocean.js"></script>
+</head>
+<body style="font-family:'Helvetica Neue', Arial; font-size: 16px;">
+	{% for my_image in obj1.image_set.all %}
+		<a><img src = "{{ my_image.image.url }}" height="420"/></a>
+	{% endfor %}
+	</br>
+	<a href="/">Back</a>
+</body>
+</html>
