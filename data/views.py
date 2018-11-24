@@ -8,6 +8,7 @@ from django.http import HttpResponse
 from collections import OrderedDict
 from fusioncharts import FusionCharts
 import datetime
+import json
 
 # Local libraries
 from .models import gallery, image, location, acceleration, temperature, humidity
@@ -56,7 +57,7 @@ def graph_data(request):
 		
 	# Create an object for the column 2D chart using the FusionCharts class constructor
 	# The chart data is passed to the `dataSource` parameter.
-	temperatureChart = FusionCharts("selectscatter", "ex1", 700, 400, "chart-1", "json", dataSource_1)
+	temperatureChart = FusionCharts("selectscatter", "ex1", "700", "400", "chart-1", "json", json.dumps(dataSource_1))
 
 	# --------------------------- HUMIDITY ---------------------------
 
@@ -99,7 +100,7 @@ def graph_data(request):
 		
 	# Create an object for the column 2D chart using the FusionCharts class constructor
 	# The chart data is passed to the `dataSource` parameter.			
-	humidityChart = FusionCharts("zoomscatter", "ex2", 700, 400, "chart-2", "json", dataSource_2)
+	humidityChart = FusionCharts("selectscatter", "ex2", 700, 400, "chart-2", "json", dataSource_2)
 	
 	# --------------------------- ALTITUDE ---------------------------
 
@@ -142,7 +143,7 @@ def graph_data(request):
 		
 	# Create an object for the column 2D chart using the FusionCharts class constructor
 	# The chart data is passed to the `dataSource` parameter.	
-	altitudeChart = FusionCharts("zoomscatter", "ex3", 700, 400, "chart-3", "json", dataSource_3)
+	altitudeChart = FusionCharts("selectscatter", "ex3", 700, 400, "chart-3", "json", dataSource_3)
 
 	# --------------------------- ACCELERATION ---------------------------
 
@@ -218,7 +219,7 @@ def graph_data(request):
 		
 	# Create an object for the column 2D chart using the FusionCharts class constructor
 	# The chart data is passed to the `dataSource` parameter.		
-	accelerometerChart = FusionCharts("zoomscatter", "ex4", 700, 400, "chart-4", "json", dataSource_4)
+	accelerometerChart = FusionCharts("selectscatter", "ex4", 700, 400, "chart-4", "json", dataSource_4)
 
 	# Images test code
 	my_gallery = get_object_or_404(gallery, pk = 1)
