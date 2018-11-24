@@ -99,7 +99,7 @@ def graph_data(request):
 		
 	# Create an object for the column 2D chart using the FusionCharts class constructor
 	# The chart data is passed to the `dataSource` parameter.			
-	humidityChart = FusionCharts("selectscatter", "ex2", 700, 400, "chart-2", "json", dataSource_2)
+	humidityChart = FusionCharts("zoomscatter", "ex2", 700, 400, "chart-2", "json", dataSource_2)
 	
 	# --------------------------- ALTITUDE ---------------------------
 
@@ -142,7 +142,7 @@ def graph_data(request):
 		
 	# Create an object for the column 2D chart using the FusionCharts class constructor
 	# The chart data is passed to the `dataSource` parameter.	
-	altitudeChart = FusionCharts("selectscatter", "ex3", 700, 400, "chart-3", "json", dataSource_3)
+	altitudeChart = FusionCharts("zoomscatter", "ex3", 700, 400, "chart-3", "json", dataSource_3)
 
 	# --------------------------- ACCELERATION ---------------------------
 
@@ -218,7 +218,7 @@ def graph_data(request):
 		
 	# Create an object for the column 2D chart using the FusionCharts class constructor
 	# The chart data is passed to the `dataSource` parameter.		
-	accelerometerChart = FusionCharts("selectscatter", "ex4", 700, 400, "chart-4", "json", dataSource_4)
+	accelerometerChart = FusionCharts("zoomscatter", "ex4", 700, 400, "chart-4", "json", dataSource_4)
 
 	# Images test code
 	my_gallery = get_object_or_404(gallery, pk = 1)
